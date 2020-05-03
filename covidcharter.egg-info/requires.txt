@@ -1,5 +1,0 @@
-matplotlib
-pandas
-click
-requests
-urllib3
