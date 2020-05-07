@@ -12,7 +12,7 @@ class VirginiaData:
     def get_vdh_data():
         endpoint = 'https://www.vdh.virginia.gov/content/uploads/sites/182/2020/03/VDH-COVID-19-PublicUseDataset-Cases.csv'
         response = requests.get(endpoint, verify=False).content
-        if response.status_code is not 200:
+        if response is "":
             raise SystemError("Virginia Department of Health data is not available right now. Please try again later.")
         vdh_covid_df = pd.read_csv(io.StringIO(response.decode('utf-8')))
         return vdh_covid_df
